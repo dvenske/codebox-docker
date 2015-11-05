@@ -11,8 +11,5 @@ RUN apt-get update && \
 	make clean && \
 	make
 
-ENV CODEBOX_USERNAME dvenske
-ENV CODEBOX_PASSWORD turtle
-
 EXPOSE 80
 ENTRYPOINT ["sh", "-c", "/usr/bin/codebox run -p 80 -u $CODEBOX_USERNAME:$CODEBOX_PASSWORD"]
