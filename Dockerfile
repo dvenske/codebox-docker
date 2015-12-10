@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu
 MAINTAINER deane@venske.net
 
 WORKDIR /workspace
@@ -11,8 +11,8 @@ RUN apt-get update && \
 	make clean && \
 	make
 
-ENV CODEBOX_USERNAME=win
-ENV CODEBOX_PASSWORD=1g3pass
+ENV CODEBOX_USERNAME=user
+ENV CODEBOX_PASSWORD=pass
 
 EXPOSE 80
 ENTRYPOINT ["sh", "-c", "/usr/bin/codebox run -p 80 -u $CODEBOX_USERNAME:$CODEBOX_PASSWORD"]
